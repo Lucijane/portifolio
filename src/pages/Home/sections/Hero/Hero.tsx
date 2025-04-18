@@ -5,7 +5,8 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Avatar from "../../../../assets/images/avatar.jpg"
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
-import { Padding } from "@mui/icons-material";
+import { ReactNode } from "react";
+//import { Padding } from "@mui/icons-material";
 
 const Hero = () => {
 
@@ -23,11 +24,13 @@ const Hero = () => {
         }
     }))
 
-    const StyledImg = styled("img")((theme) => ({
+    const StyledImg = styled("img")(() => ({
         width: "75%",
         borderRadius: "50%",
         border: '1px solid ${theme.palette.primary.contrastText}'
     }))
+
+
 
     return (
         <>
@@ -52,10 +55,10 @@ const Hero = () => {
                             <Typography color="primary.contrastText" variant="h2" textAlign="center" >I'm a Developer Software </Typography>
                             <Grid container display="flex" justifyContent="Center" spacing={3} pt={3}>
                                 <Grid size={{ xs: 12, md: 4, }} display="flex" justifyContent="Center">
-                                    <StyledButton> <DownloadIcon /> <Typography>Download CV</Typography> </StyledButton>
+                                    <StyledButton onClick={() => console.log("download")}> <DownloadIcon /> <Typography>Download CV</Typography> </StyledButton>
                                 </Grid>
                                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="Center">
-                                    <StyledButton> <MailOutlineIcon /> <Typography> Contact me </Typography> </StyledButton>
+                                    <StyledButton onClick={() => console.log("Contact me")}> <MailOutlineIcon /> <Typography> Contact me </Typography> </StyledButton>
                                 </Grid>
                             </Grid>
                         </Grid>
